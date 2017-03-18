@@ -1,10 +1,21 @@
-//: Playground - noun: a place where people can play
+//: Playground - noun: a place where people can develop
 
-import UIKit
+import PlaygroundSupport
 import SpriteKit
 
-var str = "Hello, playground"
-let frame = CGRect(x: 0, y: 0, width: 1024, height: 768)
-var scene = SKScene(size: frame.size)
+let width = 1024
+let height = 768
 
+// Let's create the container view
+let spriteView = SKView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+spriteView.showsDrawCount = true
+spriteView.showsNodeCount = true
+spriteView.showsFPS = true
+
+// Now add the scene
+let scene = MainScene(size: CGSize(width: width, height: height))
+spriteView.presentScene(scene)
+
+// Finally present this to the user
+PlaygroundPage.current.liveView = spriteView
 
